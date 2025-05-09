@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: saml2
+  security:
+    saml2:
+      relyingparty:
+        registration:
+          xxxxxxxx:
+            assertingparty:
+              entity-id: https://sts.windows.net/xxxxxxx/
+              single-sign-on:
+                url: https://login.microsoftonline.com/xxxxxxx/saml2
+                sign-request: false
+              verification:
+                credentials:
+                  - certificate-location: classpath:mocksaml.cer
+              assertion-consumer-service:
+                url: http://localhost:8080/login/saml2/sso/xxxxxxx
